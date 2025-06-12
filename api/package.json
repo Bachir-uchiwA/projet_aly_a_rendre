@@ -1,0 +1,12 @@
+{
+  "name": "json-server-api",
+  "version": "1.0.0",
+  "description": "API WhatsApp clone avec json-server",
+  "main": "db.json",
+  "scripts": {
+    "start": "json-server --host 0.0.0.0 --watch db.json --port $PORT"
+  },
+  "dependencies": {
+    "json-server": "^0.17.4"
+  }
+}
