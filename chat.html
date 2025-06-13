@@ -94,37 +94,37 @@
                 </div> 
                 <div class="flex items-center space-x-8 text-gray-300 relative">
                     <button id="newChatBtn" type="button" class="ml-2 flex items-center justify-center w-8 h-8 rounded-full hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-green-500">
-                        <svg viewBox="0 0 24 24" height="24" width="24" preserveAspectRatio="xMidYMid meet" fill="none">
-                            <title>new-chat-outline</title>
-                            <path d="M9.53277 12.9911H11.5086V14.9671C11.5086 15.3999 11.7634 15.8175 12.1762 15.9488C12.8608 16.1661 13.4909 15.6613 13.4909 15.009V12.9911H15.4672C15.9005 12.9911 16.3181 12.7358 16.449 12.3226C16.6659 11.6381 16.1606 11.0089 15.5086 11.0089H13.4909V9.03332C13.4909 8.60007 13.2361 8.18252 12.8233 8.05119C12.1391 7.83391 11.5086 8.33872 11.5086 8.991V11.0089H9.49088C8.83941 11.0089 8.33411 11.6381 8.55097 12.3226C8.68144 12.7358 9.09947 12.9911 9.53277 12.9911Z" fill="currentColor"></path>
-                            <path fill-rule="evenodd" clip-rule="evenodd" d="M0.944298 5.52617L2.99998 8.84848V17.3333C2.99998 18.8061 4.19389 20 5.66665 20H19.3333C20.8061 20 22 18.8061 22 17.3333V6.66667C22 5.19391 20.8061 4 19.3333 4H1.79468C1.01126 4 0.532088 4.85997 0.944298 5.52617ZM4.99998 8.27977V17.3333C4.99998 17.7015 5.29845 18 5.66665 18H19.3333C19.7015 18 20 17.7015 20 17.3333V6.66667C20 6.29848 19.7015 6 19.3333 6H3.58937L4.99998 8.27977Z" fill="currentColor"></path>
-                        </svg>
+                        <i class="fas fa-plus"></i>
                     </button>
-                    <!-- Bouton menu (3 points) -->
-                    <button id="menuBtn" type="button" class="ml-2 flex items-center justify-center w-8 h-8 rounded-full hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-green-500">
-                        <i class="fas fa-ellipsis-v"></i>
-                    </button>
-                    <!-- Menu contextuel -->
-                    <div id="contextMenu" class="absolute left-0 mt-12 w-64 bg-gray-900 rounded-xl shadow-xl border border-gray-700 text-gray-200 z-50 hidden">
-                        <ul class="py-2">
-                            <li class="px-5 py-3 hover:bg-gray-800 cursor-pointer flex items-center space-x-2">
-                                <i class="fas fa-users"></i>
-                                <span>Nouveau groupe</span>
-                            </li>
-                            <li class="px-5 py-3 hover:bg-gray-800 cursor-pointer flex items-center space-x-2">
-                                <i class="fas fa-star"></i>
-                                <span>Messages importants</span>
-                            </li>
-                            <li class="px-5 py-3 hover:bg-gray-800 cursor-pointer flex items-center space-x-2">
-                                <i class="fas fa-check-square"></i>
-                                <span>Sélectionner les discussions</span>
-                            </li>
-                            <li><hr class="my-1 border-gray-700"></li>
-                            <li id="logoutBtn" class="px-5 py-3 hover:bg-red-900 text-red-400 cursor-pointer flex items-center space-x-2">
-                                <i class="fas fa-sign-out-alt"></i>
-                                <span>Déconnexion</span>
-                            </li>
-                        </ul>
+                    <!-- Modification du bouton menu -->
+                    <div class="relative">
+                        <button id="menuBtn" type="button" class="flex items-center justify-center w-8 h-8 rounded-full hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-green-500">
+                            <i class="fas fa-ellipsis-v text-gray-300"></i>
+                        </button>
+                        <!-- Menu contextuel -->
+                        <div id="contextMenu" class="absolute right-0 mt-2 w-64 bg-gray-800 rounded-lg shadow-xl border border-gray-700 hidden z-50">
+                            <ul class="py-2">
+                                <li class="px-4 py-2 hover:bg-gray-700 cursor-pointer">
+                                    <a href="#" class="flex items-center text-gray-300">
+                                        <i class="fas fa-users mr-3"></i>
+                                        <span>Nouveau groupe</span>
+                                    </a>
+                                </li>
+                                <li class="px-4 py-2 hover:bg-gray-700 cursor-pointer">
+                                    <a href="#" class="flex items-center text-gray-300">
+                                        <i class="fas fa-cog mr-3"></i>
+                                        <span>Paramètres</span>
+                                    </a>
+                                </li>
+                                <li><hr class="my-2 border-gray-700"></li>
+                                <li id="logoutBtn" class="px-4 py-2 hover:bg-red-900 cursor-pointer">
+                                    <a href="#" class="flex items-center text-red-400">
+                                        <i class="fas fa-sign-out-alt mr-3"></i>
+                                        <span>Déconnexion</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -153,10 +153,7 @@
   <path d="M5.164 14H15c-1.5-1-2-5.902-2-7q0-.396-.06-.776zm6.288-10.617A5 5 0 0 0 8.995 2.1a1 1 0 1</path>
 </svg>
     </div>
-    <div class="flex-1">
-      <p class="text-sm text-green-200 font-medium leading-tight">Vous avez 3 nouvelles notifications</p>
-      <a href="#" class="text-xs text-green-100 underline">Voir toutes les notifications</a>
-    </div>
+  
     <button class="absolute top-2 right-2 text-green-200 hover:text-green-100">
       <i class="fas fa-times"></i>
     </button>

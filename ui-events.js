@@ -43,35 +43,47 @@ export function setupUIEvents() {
     // Menu contextuel (3 points)
     const menuBtn = document.getElementById('menuBtn');
     const contextMenu = document.getElementById('contextMenu');
+    
     if (menuBtn && contextMenu) {
-        menuBtn.onclick = (e) => {
+        // Gestionnaire de clic sur le bouton menu
+        menuBtn.addEventListener('click', (e) => {
+            e.preventDefault();
             e.stopPropagation();
             contextMenu.classList.toggle('hidden');
-        };
+        });
+
+        // Fermer le menu au clic en dehors
         document.addEventListener('click', (e) => {
-            if (!contextMenu.classList.contains('hidden') && !contextMenu.contains(e.target) && e.target !== menuBtn) {
+            if (!contextMenu.contains(e.target) && !menuBtn.contains(e.target)) {
                 contextMenu.classList.add('hidden');
             }
         });
+
+        // Fermer le menu avec la touche Escape
         document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape' && !contextMenu.classList.contains('hidden')) {
+            if (e.key === 'Escape') {
                 contextMenu.classList.add('hidden');
             }
         });
-    }
-    // Déconnexion
-    const logoutBtn = document.getElementById('logoutBtn');
-    if (logoutBtn) {
-        logoutBtn.onclick = (e) => {
-            e.preventDefault();
-            showModal({
-                title: 'Déconnexion',
-                content: '<p>Voulez-vous vraiment vous déconnecter ?</p>',
-                actions: [
-                    { label: 'Annuler', className: 'bg-gray-600 text-white hover:bg-gray-700' },
-                    { label: 'Déconnexion', className: 'bg-red-600 text-white hover:bg-red-700', onClick: () => window.location.href = '/' }
-                ]
+
+        // Gestionnaire de clic sur le bouton déconnexion
+        const logoutBtn = document.getElementById('logoutBtn');
+        if (logoutBtn) {
+            logoutBtn.addEventListener('click', (e) => {
+                e.preventDefault();
+                showModal({
+                    title: 'Déconnexion',
+                    content: '<p>Voulez-vous vraiment vous déconnecter ?</p>',
+                    actions: [
+                        { label: 'Annuler', className: 'bg-gray-600 text-white hover:bg-gray-700' },
+                        { 
+                            label: 'Déconnexion', 
+                            className: 'bg-red-600 text-white hover:bg-red-700',
+                            onClick: () => window.location.href = '/'
+                        }
+                    ]
+                });
             });
-        };
+        }
     }
 }
