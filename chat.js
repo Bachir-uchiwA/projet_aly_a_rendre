@@ -279,6 +279,8 @@ function setupChatInterface(chatId) {
 }
 
 // ----------- Événement principal DOMContentLoaded -----------
+import { setupUIEvents } from './ui-events.js';
+
 document.addEventListener('DOMContentLoaded', function() {
     console.log("DOM entièrement chargé !");
 
@@ -567,7 +569,7 @@ document.addEventListener('DOMContentLoaded', function() {
         newChatBtn.addEventListener('click', () => {
             // Affiche le panneau "Nouvelle discussion"
             document.getElementById('sidebarChats').classList.remove('hidden');
-            document.querySelector('.flex-1.bg-gray-800.flex.items-center.justify-center').classList.add('hidden');
+            document.querySelector('.flex-1.bg-gray-800.flex.items-center.justifie-center').classList.add('hidden');
             showNewChatPanel();
         });
         newChatBtn.tabIndex = 0;
@@ -939,5 +941,5 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // ...autres fonctionnalités existantes...
+    setupUIEvents();
 });
