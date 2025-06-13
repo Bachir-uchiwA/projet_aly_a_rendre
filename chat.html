@@ -100,38 +100,33 @@
                             <path fill-rule="evenodd" clip-rule="evenodd" d="M0.944298 5.52617L2.99998 8.84848V17.3333C2.99998 18.8061 4.19389 20 5.66665 20H19.3333C20.8061 20 22 18.8061 22 17.3333V6.66667C22 5.19391 20.8061 4 19.3333 4H1.79468C1.01126 4 0.532088 4.85997 0.944298 5.52617ZM4.99998 8.27977V17.3333C4.99998 17.7015 5.29845 18 5.66665 18H19.3333C19.7015 18 20 17.7015 20 17.3333V6.66667C20 6.29848 19.7015 6 19.3333 6H3.58937L4.99998 8.27977Z" fill="currentColor"></path>
                         </svg>
                     </button>
-                    <!-- Il faut mettre un vrai élément HTML pour le bouton ! -->
+                    <!-- Bouton menu (3 points) -->
                     <button id="menuBtn" type="button" class="ml-2 flex items-center justify-center w-8 h-8 rounded-full hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-green-500">
                         <i class="fas fa-ellipsis-v"></i>
                     </button>
-                    <!-- Menu contextuel caché, positionné juste sous l'icône -->
-                    <div id="contextMenu" class="hidden absolute right-0 top-full mt-2 min-w-[250px] bg-[#18191a] rounded-2xl shadow-2xl border border-[#23272b] z-50">
-                        <ul class="py-2 m-0 p-0">
-                            <li>
-                                <a href="#" class="flex items-center px-6 py-3 text-[#e4e6eb] text-[15px] rounded-xl transition-colors duration-150 hover:bg-[#23272b] hover:text-white">
-                                    <i class="fas fa-users mr-3 text-blue-400"></i> Nouveau groupe
-                                </a>
+                    <!-- Menu contextuel -->
+                    <div id="contextMenu" class="absolute left-0 mt-12 w-64 bg-gray-900 rounded-xl shadow-xl border border-gray-700 text-gray-200 z-50 hidden">
+                        <ul class="py-2">
+                            <li class="px-5 py-3 hover:bg-gray-800 cursor-pointer flex items-center space-x-2">
+                                <i class="fas fa-users"></i>
+                                <span>Nouveau groupe</span>
                             </li>
-                            <li>
-                                <a href="#" class="flex items-center px-6 py-3 text-[#e4e6eb] text-[15px] rounded-xl transition-colors duration-150 hover:bg-[#23272b] hover:text-white">
-                                    <i class="fas fa-star mr-3 text-yellow-400"></i> Messages importants
-                                </a>
+                            <li class="px-5 py-3 hover:bg-gray-800 cursor-pointer flex items-center space-x-2">
+                                <i class="fas fa-star"></i>
+                                <span>Messages importants</span>
                             </li>
-                            <li>
-                                <a href="#" class="flex items-center px-6 py-3 text-[#e4e6eb] text-[15px] rounded-xl transition-colors duration-150 hover:bg-[#23272b] hover:text-white">
-                                    <i class="fas fa-check-square mr-3 text-green-300"></i> Sélectionner les discussions
-                                </a>
+                            <li class="px-5 py-3 hover:bg-gray-800 cursor-pointer flex items-center space-x-2">
+                                <i class="fas fa-check-square"></i>
+                                <span>Sélectionner les discussions</span>
                             </li>
-                            <li>
-                                <hr class="my-2 border-[#23272b]">
-                            </li>
-                            <li>
-                                <a href="#" id="logoutBtn" class="flex items-center px-6 py-3 text-[#e4e6eb] text-[15px] rounded-xl transition-colors duration-150 hover:bg-red-400 hover:text-white">
-                                    <i class="fas fa-sign-out-alt mr-3 text-red-400"></i> Déconnexion
-                                </a>
+                            <li><hr class="my-1 border-gray-700"></li>
+                            <li id="logoutBtn" class="px-5 py-3 hover:bg-red-900 text-red-400 cursor-pointer flex items-center space-x-2">
+                                <i class="fas fa-sign-out-alt"></i>
+                                <span>Déconnexion</span>
                             </li>
                         </ul>
-                    </div>                </div>
+                    </div>
+                </div>
             </div>
 
             <!-- Search -->
